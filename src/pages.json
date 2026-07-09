@@ -1,0 +1,105 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Lume璐觅",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/mine/mine",
+      "style": {
+        "navigationBarTitleText": "个人中心",
+        "navigationBarBackgroundColor": "#FFE4E1"
+      }
+    },
+    {
+      "path": "pages/test/test",
+      "style": {
+        "navigationBarTitleText": "测评中心",
+        "navigationBarBackgroundColor": "#FFE4E1"
+      }
+    },
+    {
+      "path": "pages/test/question",
+      "style": {
+        "navigationBarTitleText": "答题",
+        "navigationBarBackgroundColor": "#FFE4E1"
+      }
+    },
+    {
+      "path": "pages/test/result",
+      "style": {
+        "navigationBarTitleText": "测评结果",
+        "navigationBarBackgroundColor": "#FFE4E1"
+      }
+    },
+    {
+      "path": "pages/plan/plan",
+      "style": {
+        "navigationBarTitleText": "人生规划",
+        "navigationBarBackgroundColor": "#FFE4E1"
+      }
+    },
+    {
+      "path": "pages/companion/companion",
+      "style": {
+        "navigationBarTitleText": "Lume陪你聊",
+        "navigationBarBackgroundColor": "#FFE4E1"
+      }
+    },
+    {
+      "path": "pages/checkin/checkin",
+      "style": {
+        "navigationBarTitleText": "每日打卡",
+        "navigationBarBackgroundColor": "#FFE4E1"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Lume璐觅",
+    "navigationBarBackgroundColor": "#FFE4E1",
+    "backgroundColor": "#FFF5F5",
+    "usingComponents": true
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF6B8A",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icons/home.png",
+        "selectedIconPath": "static/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测评",
+        "iconPath": "static/icons/test.png",
+        "selectedIconPath": "static/icons/test-active.png"
+      },
+      {
+        "pagePath": "pages/plan/plan",
+        "text": "规划",
+        "iconPath": "static/icons/plan.png",
+        "selectedIconPath": "static/icons/plan-active.png"
+      },
+      {
+        "pagePath": "pages/companion/companion",
+        "text": "陪伴",
+        "iconPath": "static/icons/chat.png",
+        "selectedIconPath": "static/icons/chat-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/icons/user.png",
+        "selectedIconPath": "static/icons/user-active.png"
+      }
+    ]
+  }
+}

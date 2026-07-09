@@ -1,0 +1,27 @@
+{
+  "name": "Lume",
+  "appid": "__UNI__LUME_APP",
+  "description": "AI人生规划陪伴者",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "h5": {
+    "title": "Lume - AI人生规划陪伴者",
+    "router": {
+      "mode": "hash",
+      "base": "./"
+    },
+    "optimization": {
+      "treeShaking": {
+        "enable": true
+      }
+    }
+  },
+  "mp-weixin": {
+    "appid": "wx0000000000000000",
+    "setting": {
+      "urlCheck": false
+    },
+    "usingComponents": true
+  }
+}
