@@ -353,24 +353,26 @@ body {
 
 .plan-tabs {
   display: flex;
-  padding: 12px 12px;
+  padding: 10px 8px;
   background: var(--bg);
-  gap: 6px;
+  gap: 4px;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .tab-chip {
-  flex: 1;
-  padding: 7px 4px;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 6px 2px;
   background: var(--white);
-  border-radius: 16px;
-  font-size: 12px;
+  border-radius: 14px;
+  font-size: 11px;
   color: var(--text-light);
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
   border: 1px solid transparent;
-  min-width: 0;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -1858,9 +1860,9 @@ body {
         <div class="plan-tabs" id="planTabs">
           <div class="tab-chip active" data-tab="0" onclick="switchPlanTab(0)">路径模拟</div>
           <div class="tab-chip" data-tab="1" onclick="switchPlanTab(1)">目标规划</div>
-          <div class="tab-chip" data-tab="2" onclick="switchPlanTab(2)">每年计划</div>
-          <div class="tab-chip" data-tab="3" onclick="switchPlanTab(3)">每月计划</div>
-          <div class="tab-chip" data-tab="4" onclick="switchPlanTab(4)">每日计划</div>
+          <div class="tab-chip" data-tab="2" onclick="switchPlanTab(2)">年计划</div>
+          <div class="tab-chip" data-tab="3" onclick="switchPlanTab(3)">月计划</div>
+          <div class="tab-chip" data-tab="4" onclick="switchPlanTab(4)">每日</div>
         </div>
 
         <div class="plan-section">
