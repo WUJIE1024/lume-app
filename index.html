@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Lume 璐觅 - AI人生规划陪伴者</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -1241,6 +1244,11 @@ body {
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 107, 138, 0.25);
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .choice-btn.primary {
@@ -2929,16 +2937,21 @@ function switchPlanTab(index) {
 }
 
 function confirmPathGood() {
-  appendPlanUserMsg('✅ 符合，开始制定目标');
-  showToast('AI 正在为你生成目标 🎯');
-  
-  setTimeout(() => {
-    appendPlanAIMsg('太棒了！🎉 我已基于这个5年路径，为你生成了3个可执行的目标：<br><br>• <b>成为全栈工程师</b>（2027年完成）<br>• <b>英语六级通过</b>（2026年6月）<br>• <b>健身减脂计划</b>（体脂率降至18%以下）<br><br>现在为你自动跳转到「目标规划」页面查看详情～');
+  try {
+    appendPlanUserMsg('✅ 符合，开始制定目标');
+    showToast('AI 正在为你生成目标 🎯');
+    
     setTimeout(() => {
-      switchPlanTab(1);
-      showToast('已跳转到目标规划 ✨');
-    }, 1500);
-  }, 1000);
+      appendPlanAIMsg('太棒了！🎉 我已基于这个5年路径，为你生成了3个可执行的目标：<br><br>• <b>成为全栈工程师</b>（2027年完成）<br>• <b>英语六级通过</b>（2026年6月）<br>• <b>健身减脂计划</b>（体脂率降至18%以下）<br><br>现在为你自动跳转到「目标规划」页面查看详情～');
+      setTimeout(() => {
+        switchPlanTab(1);
+        showToast('已跳转到目标规划 ✨');
+      }, 1500);
+    }, 1000);
+  } catch (e) {
+    console.error('confirmPathGood error:', e);
+    alert('出错了：' + e.message);
+  }
 }
 
 function userHasDifferentIdea() {
