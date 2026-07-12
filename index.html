@@ -1292,6 +1292,17 @@ body {
 }
 
 .plan-chat-card .chat-msg.ai .msg-content { text-align: left; }
+.plan-chat-card .chat-msg.user { text-align: right; }
+.plan-chat-card .chat-msg.user .msg-content {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  text-align: left;
+  max-width: 80%;
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+.plan-chat-card .chat-msg.user .msg-time { color: var(--text-light); font-size: 10px; margin-top: 2px; }
 .plan-chat-card .chat-msg .msg-content {
   font-size: 12px;
   color: var(--text);
@@ -1992,22 +2003,22 @@ body {
                   <span class="chat-icon">💬</span>
                   <span class="chat-title" style="font-size:14px;font-weight:bold;">AI 规划沟通</span>
                 </div>
-                <div class="chat-msgs" style="margin-top:10px;">
+                <div class="chat-msgs" id="planChatMsgs" style="margin-top:10px;">
                   <div class="chat-msg ai">
                     <div class="msg-content">我已经基于你的画像和3项测评结果生成了上面这份 5 年路径模拟。<br><br>请告诉我：<br>1. ✅ 这个路径符合你内心的个人规划吗？<br>2. 如果不符合，你想换成什么目标？</div>
                     <div class="msg-time">刚刚</div>
                   </div>
                 </div>
-                <div class="choice-area">
-                  <div class="choice-label">这个路径符合你内心的个人规划吗？</div>
+                <div class="choice-area" id="planChoiceArea">
+                  <div class="choice-label" id="planChoiceLabel">这个路径符合你内心的个人规划吗？</div>
                   <div class="choice-row">
-                    <div class="choice-btn primary" onclick="showToast('已确认，开始生成目标 ✅')">✅ 符合，开始制定目标</div>
+                    <div class="choice-btn primary" onclick="confirmPathGood()">✅ 符合，开始制定目标</div>
                   </div>
                   <div class="choice-row">
-                    <div class="choice-btn" onclick="showToast('请描述你的想法 💬')">💬 我有不同想法</div>
+                    <div class="choice-btn" onclick="userHasDifferentIdea()">💬 我有不同想法</div>
                   </div>
                   <div class="choice-row">
-                    <div class="choice-btn" onclick="showToast('正在为你推荐目标 🤔')">🤔 我没具体目标，求推荐</div>
+                    <div class="choice-btn" onclick="askForRecommendation()">🤔 我没具体目标，求推荐</div>
                   </div>
                 </div>
               </div>
@@ -2915,6 +2926,205 @@ function switchPlanTab(index) {
     const el = document.getElementById('planTab-' + i);
     if (el) el.style.display = i === index ? 'block' : 'none';
   }
+}
+
+function confirmPathGood() {
+  appendPlanUserMsg('✅ 符合，开始制定目标');
+  showToast('AI 正在为你生成目标 🎯');
+  
+  setTimeout(() => {
+    appendPlanAIMsg('太棒了！🎉 我已基于这个5年路径，为你生成了3个可执行的目标：<br><br>• <b>成为全栈工程师</b>（2027年完成）<br>• <b>英语六级通过</b>（2026年6月）<br>• <b>健身减脂计划</b>（体脂率降至18%以下）<br><br>现在为你自动跳转到「目标规划」页面查看详情～');
+    setTimeout(() => {
+      switchPlanTab(1);
+      showToast('已跳转到目标规划 ✨');
+    }, 1500);
+  }, 1000);
+}
+
+function userHasDifferentIdea() {
+  appendPlanUserMsg('💬 我有不同想法');
+  showToast('AI 正在倾听你的想法 💭');
+  
+  setTimeout(() => {
+    appendPlanAIMsg('好的，我明白你的想法是独特的 👂<br><br>请告诉我：<br>1. 你想换什么方向的目标？<br>2. 大概在什么时间节点达成？<br><br>你可以直接在下方输入，或者描述你的现状，我会根据你的反馈重新生成个性化路径。');
+    replacePlanChoices([
+      { text: '💼 想换工作方向', action: 'changeJobDirection()' },
+      { text: '📚 想继续深造学习', action: 'changeToStudy()' },
+      { text: '🌐 想换到其他领域', action: 'changeToOther()' },
+      { text: '↩️ 重新模拟', action: 'rerunSimulation()' }
+    ], '你想换成什么方向？');
+  }, 800);
+}
+
+function askForRecommendation() {
+  appendPlanUserMsg('🤔 我没具体目标，求推荐');
+  showToast('AI 正在为你推荐目标 🤔');
+  
+  setTimeout(() => {
+    appendPlanAIMsg('没问题！根据你的 INTJ 性格和计算机专业背景，我为你推荐以下 3 个方向：<br><br>• <b>技术专家路线</b>：深耕算法、架构设计，成为领域专家<br>• <b>技术管理路线</b>：从开发到Tech Lead，培养团队管理能力<br>• <b>产品+技术路线</b>：转型技术型产品经理，打造产品思维<br><br>选择一个方向让我继续帮你规划～');
+    replacePlanChoices([
+      { text: '🔬 技术专家路线', action: 'choosePath("技术专家")' },
+      { text: '👥 技术管理路线', action: 'choosePath("技术管理")' },
+      { text: '🚀 产品+技术路线', action: 'choosePath("产品技术")' }
+    ], '选择一个方向：');
+  }, 800);
+}
+
+function changeJobDirection() {
+  appendPlanUserMsg('💼 想换工作方向');
+  setTimeout(() => {
+    appendPlanAIMsg('明白！换工作需要先了解你感兴趣的行业。你可以告诉我：<br>1. 喜欢什么类型的公司（创业/大厂/外企）？<br>2. 期望的薪资范围？<br>3. 是否接受加班？<br><br>我会根据你的答案推荐合适的岗位。');
+    replacePlanChoices([
+      { text: '🚀 互联网大厂', action: 'recommendBigCompany()' },
+      { text: '💡 创业公司', action: 'recommendStartup()' },
+      { text: '↩️ 返回上一步', action: 'userHasDifferentIdea()' }
+    ], '选择公司类型：');
+  }, 600);
+}
+
+function changeToStudy() {
+  appendPlanUserMsg('📚 想继续深造学习');
+  setTimeout(() => {
+    appendPlanAIMsg('深造是提升竞争力的好选择！🎓<br><br>根据你的情况，推荐：<br>• <b>考研</b>：计算机硕士，提升学术与算法能力<br>• <b>留学</b>：海外CS硕士，接触前沿技术<br>• <b>考证</b>：PMP、阿里云/AWS认证等<br><br>选择你想了解的方向：');
+    replacePlanChoices([
+      { text: '🎓 国内考研', action: 'recommendPostgraduate()' },
+      { text: '✈️ 海外留学', action: 'recommendStudyAbroad()' },
+      { text: '↩️ 返回上一步', action: 'userHasDifferentIdea()' }
+    ], '选择深造方向：');
+  }, 600);
+}
+
+function changeToOther() {
+  appendPlanUserMsg('🌐 想换到其他领域');
+  setTimeout(() => {
+    appendPlanAIMsg('跨界发展很有挑战性！🌟<br><br>几个值得考虑的方向：<br>• <b>AI产品经理</b>：技术+产品结合，薪资高<br>• <b>数据分析师</b>：大数据时代刚需<br>• <b>UI/UX设计师</b>：技术背景转设计有优势<br><br>你更倾向哪个？');
+    replacePlanChoices([
+      { text: '🤖 AI产品经理', action: 'recommendAIPM()' },
+      { text: '📊 数据分析师', action: 'recommendDataAnalyst()' },
+      { text: '↩️ 返回上一步', action: 'userHasDifferentIdea()' }
+    ], '选择跨界方向：');
+  }, 600);
+}
+
+function choosePath(path) {
+  appendPlanUserMsg('选择了 ' + path + ' 路线');
+  setTimeout(() => {
+    appendPlanAIMsg('太好了！✨ 我已为你生成 "' + path + '" 专属的5年路径规划。<br><br>点击下方按钮查看完整规划详情，或继续和我沟通调整细节。');
+    replacePlanChoices([
+      { text: '✅ 符合，开始制定目标', action: 'confirmPathGood()' },
+      { text: '↻ 重新模拟', action: 'rerunSimulation()' }
+    ], '这个路径符合你内心的个人规划吗？');
+  }, 800);
+}
+
+function recommendBigCompany() {
+  appendPlanUserMsg('🚀 互联网大厂');
+  setTimeout(() => {
+    appendPlanAIMsg('推荐大厂方向！建议目标：<br>• 字节、阿里、腾讯、美团、京东等<br>• 准备算法、系统设计、项目经验<br>• 简历优化 + 模拟面试');
+    replacePlanChoices([
+      { text: '✅ 符合，开始制定目标', action: 'confirmPathGood()' },
+      { text: '↻ 重新模拟', action: 'rerunSimulation()' }
+    ], '这个路径符合你内心的个人规划吗？');
+  }, 600);
+}
+
+function recommendStartup() {
+  appendPlanUserMsg('💡 创业公司');
+  setTimeout(() => {
+    appendPlanAIMsg('创业公司推荐！建议：<br>• 选择有融资的A轮以上公司<br>• 全栈能力 + 业务理解<br>• 高成长性，1-2年快速晋升');
+    replacePlanChoices([
+      { text: '✅ 符合，开始制定目标', action: 'confirmPathGood()' },
+      { text: '↻ 重新模拟', action: 'rerunSimulation()' }
+    ], '这个路径符合你内心的个人规划吗？');
+  }, 600);
+}
+
+function recommendPostgraduate() {
+  appendPlanUserMsg('🎓 国内考研');
+  setTimeout(() => {
+    appendPlanAIMsg('考研建议：<br>• 目标院校：清北复交浙 or 计算机强校<br>• 备考科目：政治、英语、数学、专业课<br>• 时间规划：现在开始准备');
+    replacePlanChoices([
+      { text: '✅ 符合，开始制定目标', action: 'confirmPathGood()' },
+      { text: '↻ 重新模拟', action: 'rerunSimulation()' }
+    ], '这个路径符合你内心的个人规划吗？');
+  }, 600);
+}
+
+function recommendStudyAbroad() {
+  appendPlanUserMsg('✈️ 海外留学');
+  setTimeout(() => {
+    appendPlanAIMsg('留学方向建议：<br>• 美国CS Top 30：CMU、Stanford、MIT等<br>• 准备：GRE、TOEFL、推荐信、科研经历<br>• 时间：现在准备明年秋季申请');
+    replacePlanChoices([
+      { text: '✅ 符合，开始制定目标', action: 'confirmPathGood()' },
+      { text: '↻ 重新模拟', action: 'rerunSimulation()' }
+    ], '这个路径符合你内心的个人规划吗？');
+  }, 600);
+}
+
+function recommendAIPM() {
+  appendPlanUserMsg('🤖 AI产品经理');
+  setTimeout(() => {
+    appendPlanAIMsg('AI产品经理方向很有前景！🌟<br>• 核心能力：AI技术理解 + 产品思维 + 商业敏感度<br>• 入门：学习LLM、Prompt Engineering、AIGC产品<br>• 转型路径：技术开发 → AI产品助理 → AI产品经理');
+    replacePlanChoices([
+      { text: '✅ 符合，开始制定目标', action: 'confirmPathGood()' },
+      { text: '↻ 重新模拟', action: 'rerunSimulation()' }
+    ], '这个路径符合你内心的个人规划吗？');
+  }, 600);
+}
+
+function recommendDataAnalyst() {
+  appendPlanUserMsg('📊 数据分析师');
+  setTimeout(() => {
+    appendPlanAIMsg('数据分析师转型路径：<br>• 必备技能：SQL、Python、Tableau、统计学<br>• 业务理解：用户增长、收入分析、AB测试<br>• 工具：Hive、Spark、A/B Testing');
+    replacePlanChoices([
+      { text: '✅ 符合，开始制定目标', action: 'confirmPathGood()' },
+      { text: '↻ 重新模拟', action: 'rerunSimulation()' }
+    ], '这个路径符合你内心的个人规划吗？');
+  }, 600);
+}
+
+function appendPlanUserMsg(text) {
+  const msgsEl = document.getElementById('planChatMsgs');
+  if (!msgsEl) return;
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'chat-msg user';
+  msgDiv.innerHTML = '<div class="msg-content">' + text + '</div><div class="msg-time">刚刚</div>';
+  msgsEl.appendChild(msgDiv);
+  msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+
+function appendPlanAIMsg(html) {
+  const msgsEl = document.getElementById('planChatMsgs');
+  if (!msgsEl) return;
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'chat-msg ai';
+  msgDiv.innerHTML = '<div class="msg-content">' + html + '</div><div class="msg-time">刚刚</div>';
+  msgsEl.appendChild(msgDiv);
+  msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+
+function replacePlanChoices(choices, label) {
+  const choiceArea = document.getElementById('planChoiceArea');
+  const choiceLabel = document.getElementById('planChoiceLabel');
+  if (!choiceArea) return;
+  
+  if (label && choiceLabel) {
+    choiceLabel.textContent = label;
+  }
+  
+  const rows = choiceArea.querySelectorAll('.choice-row');
+  rows.forEach(r => r.remove());
+  
+  choices.forEach((c, i) => {
+    const row = document.createElement('div');
+    row.className = 'choice-row';
+    const btn = document.createElement('div');
+    btn.className = 'choice-btn' + (i === 0 ? ' primary' : '');
+    btn.textContent = c.text;
+    btn.setAttribute('onclick', c.action);
+    row.appendChild(btn);
+    choiceArea.appendChild(row);
+  });
 }
 
 function filterGoals(filter, el) {
