@@ -353,25 +353,26 @@ body {
 
 .plan-tabs {
   display: flex;
-  overflow-x: auto;
-  padding: 12px 16px;
+  padding: 12px 12px;
   background: var(--bg);
-  gap: 8px;
-  scrollbar-width: none;
+  gap: 6px;
+  justify-content: space-between;
 }
 
-.plan-tabs::-webkit-scrollbar { display: none; }
-
 .tab-chip {
-  padding: 8px 16px;
+  flex: 1;
+  padding: 7px 4px;
   background: var(--white);
-  border-radius: 20px;
-  font-size: 13px;
+  border-radius: 16px;
+  font-size: 12px;
   color: var(--text-light);
-  white-space: nowrap;
+  text-align: center;
   cursor: pointer;
   transition: all 0.2s;
   border: 1px solid transparent;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tab-chip.active {
