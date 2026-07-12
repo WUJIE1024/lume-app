@@ -2024,8 +2024,8 @@ body {
             <div class="goals-list" id="goalsList">
               <div class="goal-card" onclick="showToast('查看目标详情')">
                 <div class="goal-progress-ring">
-                  <div class="ring-progress" style="--progress:68;">
-                    <span class="progress-value">68%</span>
+                  <div class="ring-progress" id="goalRing-goal1" style="--progress:68;">
+                    <span class="progress-value" id="goalProgress-goal1">68%</span>
                   </div>
                 </div>
                 <div class="goal-info">
@@ -2035,12 +2035,12 @@ body {
                     <span class="goal-deadline">截止：2027-06-30</span>
                   </div>
                 </div>
-                <div class="goal-status in_progress">进行中</div>
+                <div class="goal-status in_progress" id="goalStatus-goal1">进行中</div>
               </div>
               <div class="goal-card" onclick="showToast('查看目标详情')">
                 <div class="goal-progress-ring">
-                  <div class="ring-progress" style="--progress:100;">
-                    <span class="progress-value">100%</span>
+                  <div class="ring-progress" id="goalRing-goal2" style="--progress:100;">
+                    <span class="progress-value" id="goalProgress-goal2">100%</span>
                   </div>
                 </div>
                 <div class="goal-info">
@@ -2050,12 +2050,12 @@ body {
                     <span class="goal-deadline">截止：2026-06-30</span>
                   </div>
                 </div>
-                <div class="goal-status completed">已完成</div>
+                <div class="goal-status completed" id="goalStatus-goal2">已完成</div>
               </div>
               <div class="goal-card" onclick="showToast('查看目标详情')">
                 <div class="goal-progress-ring">
-                  <div class="ring-progress" style="--progress:25;">
-                    <span class="progress-value">25%</span>
+                  <div class="ring-progress" id="goalRing-goal3" style="--progress:25;">
+                    <span class="progress-value" id="goalProgress-goal3">25%</span>
                   </div>
                 </div>
                 <div class="goal-info">
@@ -2065,7 +2065,7 @@ body {
                     <span class="goal-deadline">截止：2026-12-31</span>
                   </div>
                 </div>
-                <div class="goal-status in_progress">进行中</div>
+                <div class="goal-status in_progress" id="goalStatus-goal3">进行中</div>
               </div>
             </div>
           </div>
@@ -2082,8 +2082,8 @@ body {
               <div style="background:var(--white);border-radius:14px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
                 <div style="display:flex;align-items:center;">
                   <div class="goal-progress-ring" style="width:40px;height:40px;">
-                    <div class="ring-progress" style="--progress:100;">
-                      <span class="progress-value" style="font-size:10px;">100%</span>
+                    <div class="ring-progress" id="yearRing-year2026" style="--progress:100;">
+                      <span class="progress-value" style="font-size:10px;" id="yearProgress-year2026">100%</span>
                     </div>
                   </div>
                   <div style="flex:1;margin-left:10px;">
@@ -2091,14 +2091,14 @@ body {
                     <div style="font-size:12px;color:var(--text-light);margin-top:2px;">成为全栈工程师 · 基础阶段</div>
                     <div style="font-size:11px;color:#666;margin-top:4px;">完成前端基础学习，掌握React框架</div>
                   </div>
-                  <div class="goal-status completed">已完成</div>
+                  <div class="goal-status completed" id="yearStatus-year2026">已完成</div>
                 </div>
               </div>
               <div style="background:var(--white);border-radius:14px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
                 <div style="display:flex;align-items:center;">
                   <div class="goal-progress-ring" style="width:40px;height:40px;">
-                    <div class="ring-progress" style="--progress:68;">
-                      <span class="progress-value" style="font-size:10px;">68%</span>
+                    <div class="ring-progress" id="yearRing-year2027" style="--progress:68;">
+                      <span class="progress-value" style="font-size:10px;" id="yearProgress-year2027">68%</span>
                     </div>
                   </div>
                   <div style="flex:1;margin-left:10px;">
@@ -2106,7 +2106,7 @@ body {
                     <div style="font-size:12px;color:var(--text-light);margin-top:2px;">成为全栈工程师 · 进阶阶段</div>
                     <div style="font-size:11px;color:#666;margin-top:4px;">深入后端开发，独立完成全栈项目</div>
                   </div>
-                  <div class="goal-status in_progress">进行中</div>
+                  <div class="goal-status in_progress" id="yearStatus-year2027">进行中</div>
                 </div>
               </div>
             </div>
@@ -2124,8 +2124,8 @@ body {
               <div style="background:var(--white);border-radius:14px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
                 <div style="display:flex;align-items:center;">
                   <div class="goal-progress-ring" style="width:40px;height:40px;">
-                    <div class="ring-progress" style="--progress:75;">
-                      <span class="progress-value" style="font-size:10px;">75%</span>
+                    <div class="ring-progress" id="monthRing-month202607" style="--progress:75;">
+                      <span class="progress-value" style="font-size:10px;" id="monthProgress-month202607">75%</span>
                     </div>
                   </div>
                   <div style="flex:1;margin-left:10px;">
@@ -2133,14 +2133,14 @@ body {
                     <div style="font-size:12px;color:var(--text-light);margin-top:2px;">2026年 · 全栈工程师</div>
                     <div style="font-size:11px;color:#666;margin-top:4px;">学习Node.js与数据库设计</div>
                   </div>
-                  <div class="goal-status in_progress">进行中</div>
+                  <div class="goal-status in_progress" id="monthStatus-month202607">进行中</div>
                 </div>
               </div>
               <div style="background:var(--white);border-radius:14px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
                 <div style="display:flex;align-items:center;">
                   <div class="goal-progress-ring" style="width:40px;height:40px;">
-                    <div class="ring-progress" style="--progress:100;">
-                      <span class="progress-value" style="font-size:10px;">100%</span>
+                    <div class="ring-progress" id="monthRing-month202606" style="--progress:100;">
+                      <span class="progress-value" style="font-size:10px;" id="monthProgress-month202606">100%</span>
                     </div>
                   </div>
                   <div style="flex:1;margin-left:10px;">
@@ -2148,7 +2148,7 @@ body {
                     <div style="font-size:12px;color:var(--text-light);margin-top:2px;">2026年 · 全栈工程师</div>
                     <div style="font-size:11px;color:#666;margin-top:4px;">React进阶与状态管理</div>
                   </div>
-                  <div class="goal-status completed">已完成</div>
+                  <div class="goal-status completed" id="monthStatus-month202606">已完成</div>
                 </div>
               </div>
             </div>
@@ -2180,7 +2180,7 @@ body {
               </div>
             </div>
             <div class="daily-tasks" id="dailyTasksList">
-              <div class="task-item" onclick="toggleDailyTask(this)">
+              <div class="task-item" id="task-item-task1" onclick="toggleDailyTask('task1')">
                 <div class="task-checkbox checked">✓</div>
                 <div class="task-content">
                   <span class="task-name completed">晨读英语30分钟</span>
@@ -2188,7 +2188,7 @@ body {
                 </div>
                 <div class="task-indicator completed"></div>
               </div>
-              <div class="task-item" onclick="toggleDailyTask(this)">
+              <div class="task-item" id="task-item-task2" onclick="toggleDailyTask('task2')">
                 <div class="task-checkbox checked">✓</div>
                 <div class="task-content">
                   <span class="task-name completed">学习React Hooks</span>
@@ -2196,7 +2196,7 @@ body {
                 </div>
                 <div class="task-indicator completed"></div>
               </div>
-              <div class="task-item" onclick="toggleDailyTask(this)">
+              <div class="task-item" id="task-item-task3" onclick="toggleDailyTask('task3')">
                 <div class="task-checkbox checked">✓</div>
                 <div class="task-content">
                   <span class="task-name completed">完成编程练习</span>
@@ -2204,7 +2204,7 @@ body {
                 </div>
                 <div class="task-indicator completed"></div>
               </div>
-              <div class="task-item" onclick="toggleDailyTask(this)">
+              <div class="task-item" id="task-item-task4" onclick="toggleDailyTask('task4')">
                 <div class="task-checkbox"></div>
                 <div class="task-content">
                   <span class="task-name">阅读技术书籍</span>
@@ -2212,7 +2212,7 @@ body {
                 </div>
                 <div class="task-indicator"></div>
               </div>
-              <div class="task-item" onclick="toggleDailyTask(this)">
+              <div class="task-item" id="task-item-task5" onclick="toggleDailyTask('task5')">
                 <div class="task-checkbox"></div>
                 <div class="task-content">
                   <span class="task-name">健身运动30分钟</span>
@@ -2639,12 +2639,28 @@ const state = {
   selectedEducation: '本科',
   selectedCareer: '学生',
   interests: ['编程', '写作', '阅读'],
+  goals: [
+    { id: 'goal1', name: '成为全栈工程师', desc: '掌握前后端开发技术栈', deadline: '2027-06-30', status: 'in_progress', progress: 68 },
+    { id: 'goal2', name: '英语六级通过', desc: '提升英语读写能力', deadline: '2026-06-30', status: 'completed', progress: 100 },
+    { id: 'goal3', name: '健身减脂计划', desc: '体脂率降至18%以下', deadline: '2026-12-31', status: 'in_progress', progress: 25 }
+  ],
+  yearlyPlans: [
+    { id: 'year2026', year: 2026, name: '成为全栈工程师 · 基础阶段', desc: '完成前端基础学习，掌握React框架', status: 'completed', progress: 100 },
+    { id: 'year2027', year: 2027, name: '成为全栈工程师 · 进阶阶段', desc: '深入后端开发，独立完成全栈项目', status: 'in_progress', progress: 68 }
+  ],
+  monthlyPlans: [
+    { id: 'month202606', year: 2026, month: 6, name: '6月计划', desc: 'React进阶与状态管理', status: 'completed', progress: 100, yearId: 'year2026', goalIds: ['goal1'] },
+    { id: 'month202607', year: 2026, month: 7, name: '7月计划', desc: '学习Node.js与数据库设计', status: 'in_progress', progress: 75, yearId: 'year2026', goalIds: ['goal1'] },
+    { id: 'month202608', year: 2026, month: 8, name: '8月计划', desc: '学习Vue框架与TypeScript', status: 'pending', progress: 0, yearId: 'year2026', goalIds: ['goal1'] },
+    { id: 'month202609', year: 2026, month: 9, name: '9月计划', desc: '英语听力专项训练', status: 'pending', progress: 0, yearId: 'year2026', goalIds: ['goal2'] },
+    { id: 'month202610', year: 2026, month: 10, name: '10月计划', desc: '健身力量训练', status: 'pending', progress: 0, yearId: 'year2026', goalIds: ['goal3'] }
+  ],
   dailyTasks: [
-    { name: '晨读英语30分钟', time: '07:00 - 07:30', completed: true },
-    { name: '学习React Hooks', time: '09:00 - 10:30', completed: true },
-    { name: '完成编程练习', time: '14:00 - 15:30', completed: true },
-    { name: '阅读技术书籍', time: '20:00 - 21:00', completed: false },
-    { name: '健身运动30分钟', time: '21:30 - 22:00', completed: false }
+    { id: 'task1', name: '晨读英语30分钟', time: '07:00 - 07:30', completed: true, monthId: 'month202607', goalIds: ['goal2'] },
+    { id: 'task2', name: '学习React Hooks', time: '09:00 - 10:30', completed: true, monthId: 'month202607', goalIds: ['goal1'] },
+    { id: 'task3', name: '完成编程练习', time: '14:00 - 15:30', completed: true, monthId: 'month202607', goalIds: ['goal1'] },
+    { id: 'task4', name: '阅读技术书籍', time: '20:00 - 21:00', completed: false, monthId: 'month202607', goalIds: ['goal1'] },
+    { id: 'task5', name: '健身运动30分钟', time: '21:30 - 22:00', completed: false, monthId: 'month202607', goalIds: ['goal3'] }
   ],
   test: {
     currentType: '',
@@ -2906,33 +2922,36 @@ function filterGoals(filter, el) {
   showToast(`筛选：${filter === 'all' ? '全部' : filter === 'in_progress' ? '进行中' : '已完成'}`);
 }
 
-function toggleDailyTask(item) {
+function toggleDailyTask(taskId) {
+  const task = state.dailyTasks.find(t => t.id === taskId);
+  if (!task) return;
+
+  task.completed = !task.completed;
+
+  const item = document.getElementById(`task-item-${taskId}`);
   const checkbox = item.querySelector('.task-checkbox');
   const taskName = item.querySelector('.task-name');
   const indicator = item.querySelector('.task-indicator');
-  const isCompleted = checkbox.classList.contains('checked');
 
-  if (isCompleted) {
-    checkbox.classList.remove('checked');
-    checkbox.innerHTML = '';
-    taskName.classList.remove('completed');
-    indicator.classList.remove('completed');
-  } else {
+  if (task.completed) {
     checkbox.classList.add('checked');
     checkbox.innerHTML = '✓';
     taskName.classList.add('completed');
     indicator.classList.add('completed');
+  } else {
+    checkbox.classList.remove('checked');
+    checkbox.innerHTML = '';
+    taskName.classList.remove('completed');
+    indicator.classList.remove('completed');
   }
 
   updateDailyStats();
+  updateAllProgress();
 }
 
 function updateDailyStats() {
-  const tasks = document.querySelectorAll('#dailyTasksList .task-item');
-  let completed = 0;
-  tasks.forEach(t => {
-    if (t.querySelector('.task-checkbox').classList.contains('checked')) completed++;
-  });
+  const tasks = state.dailyTasks.filter(t => t.monthId === 'month202607');
+  const completed = tasks.filter(t => t.completed).length;
   const pending = tasks.length - completed;
   const progress = tasks.length > 0 ? Math.round((completed / tasks.length) * 100) : 0;
 
@@ -2940,6 +2959,81 @@ function updateDailyStats() {
   document.getElementById('dailyPending').textContent = pending;
   document.getElementById('dailyProgressBar').style.width = progress + '%';
   document.getElementById('dailyProgressText').textContent = progress + '%';
+}
+
+function updateAllProgress() {
+  updateMonthlyProgress();
+  updateYearlyProgress();
+  updateGoalProgress();
+}
+
+function updateMonthlyProgress() {
+  state.monthlyPlans.forEach(monthPlan => {
+    const tasks = state.dailyTasks.filter(t => t.monthId === monthPlan.id);
+    if (tasks.length === 0) return;
+    
+    const completed = tasks.filter(t => t.completed).length;
+    const progress = Math.round((completed / tasks.length) * 100);
+    monthPlan.progress = progress;
+    monthPlan.status = progress === 100 ? 'completed' : progress > 0 ? 'in_progress' : 'pending';
+    
+    const ringEl = document.getElementById(`monthRing-${monthPlan.id}`);
+    const progressEl = document.getElementById(`monthProgress-${monthPlan.id}`);
+    const statusEl = document.getElementById(`monthStatus-${monthPlan.id}`);
+    
+    if (ringEl) ringEl.style.setProperty('--progress', progress);
+    if (progressEl) progressEl.textContent = progress + '%';
+    if (statusEl) {
+      statusEl.textContent = monthPlan.status === 'completed' ? '已完成' : monthPlan.status === 'in_progress' ? '进行中' : '待开始';
+      statusEl.className = 'goal-status ' + monthPlan.status;
+    }
+  });
+}
+
+function updateYearlyProgress() {
+  state.yearlyPlans.forEach(yearPlan => {
+    const months = state.monthlyPlans.filter(m => m.yearId === yearPlan.id);
+    if (months.length === 0) return;
+    
+    const totalWeight = months.reduce((sum, m) => sum + (m.status === 'completed' ? 100 : m.progress), 0);
+    const progress = Math.round(totalWeight / months.length);
+    yearPlan.progress = progress;
+    yearPlan.status = progress === 100 ? 'completed' : progress > 0 ? 'in_progress' : 'pending';
+    
+    const ringEl = document.getElementById(`yearRing-${yearPlan.id}`);
+    const progressEl = document.getElementById(`yearProgress-${yearPlan.id}`);
+    const statusEl = document.getElementById(`yearStatus-${yearPlan.id}`);
+    
+    if (ringEl) ringEl.style.setProperty('--progress', progress);
+    if (progressEl) progressEl.textContent = progress + '%';
+    if (statusEl) {
+      statusEl.textContent = yearPlan.status === 'completed' ? '已完成' : yearPlan.status === 'in_progress' ? '进行中' : '待开始';
+      statusEl.className = 'goal-status ' + yearPlan.status;
+    }
+  });
+}
+
+function updateGoalProgress() {
+  state.goals.forEach(goal => {
+    const months = state.monthlyPlans.filter(m => m.goalIds && m.goalIds.includes(goal.id));
+    if (months.length === 0) return;
+    
+    const totalWeight = months.reduce((sum, m) => sum + (m.status === 'completed' ? 100 : m.progress), 0);
+    const progress = Math.round(totalWeight / months.length);
+    goal.progress = progress;
+    goal.status = progress === 100 ? 'completed' : progress > 0 ? 'in_progress' : 'pending';
+    
+    const ringEl = document.getElementById(`goalRing-${goal.id}`);
+    const progressEl = document.getElementById(`goalProgress-${goal.id}`);
+    const statusEl = document.getElementById(`goalStatus-${goal.id}`);
+    
+    if (ringEl) ringEl.style.setProperty('--progress', progress);
+    if (progressEl) progressEl.textContent = progress + '%';
+    if (statusEl) {
+      statusEl.textContent = goal.status === 'completed' ? '已完成' : goal.status === 'in_progress' ? '进行中' : '待开始';
+      statusEl.className = 'goal-status ' + goal.status;
+    }
+  });
 }
 
 function toggleChatTask(row) {
