@@ -1311,6 +1311,329 @@ body {
   font-style: italic;
 }
 
+.test-page {
+  background: var(--bg);
+  min-height: 100%;
+}
+
+.test-header {
+  padding: 20px;
+  background: var(--white);
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.test-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.test-back-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.test-back-btn:active { transform: scale(0.95); }
+
+.test-title-text { font-size: 16px; font-weight: bold; color: var(--text); }
+
+.test-progress-bar {
+  margin-top: 16px;
+  height: 6px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.test-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.test-progress-text {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: right;
+}
+
+.test-content {
+  padding: 20px;
+}
+
+.test-question-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.question-number {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.question-text {
+  font-size: 17px;
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.question-options {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-card {
+  padding: 14px 16px;
+  background: var(--bg);
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.option-card:active { transform: scale(0.98); }
+
+.option-card.selected {
+  background: var(--secondary);
+  border-color: var(--primary);
+}
+
+.option-card.selected .option-icon {
+  background: var(--primary);
+  color: white;
+}
+
+.option-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: #666;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.option-text {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.test-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.test-nav-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.test-nav-btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+}
+
+.test-nav-btn.secondary {
+  background: var(--white);
+  color: var(--text);
+}
+
+.test-nav-btn:active { transform: scale(0.97); }
+
+.test-nav-btn.disabled {
+  background: #f0f0f0;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.test-result-page {
+  background: var(--bg);
+  min-height: 100%;
+  padding-bottom: 30px;
+}
+
+.result-header {
+  padding: 30px 20px;
+  background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+}
+
+.result-title { font-size: 20px; font-weight: bold; color: var(--text); text-align: center; }
+.result-subtitle { font-size: 13px; color: var(--text-light); text-align: center; margin-top: 6px; }
+
+.result-card {
+  background: var(--white);
+  margin: 0 20px;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.result-type {
+  text-align: center;
+}
+
+.result-type-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.result-type-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text);
+  margin-top: 16px;
+}
+
+.result-type-subtitle {
+  font-size: 14px;
+  color: var(--primary);
+  margin-top: 6px;
+}
+
+.result-desc {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+}
+
+.result-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.result-section-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.result-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trait-tag {
+  padding: 6px 14px;
+  background: var(--secondary);
+  border-radius: 14px;
+  font-size: 12px;
+  color: var(--primary);
+}
+
+.result-chart {
+  margin-top: 16px;
+}
+
+.chart-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chart-label {
+  width: 60px;
+  font-size: 12px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.chart-bar {
+  flex: 1;
+  height: 12px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.chart-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 6px;
+  transition: width 0.5s;
+}
+
+.chart-value {
+  width: 40px;
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 600;
+  text-align: right;
+  margin-left: 8px;
+}
+
+.result-action {
+  margin: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.result-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.result-btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+}
+
+.result-btn.secondary {
+  background: var(--white);
+  color: var(--text);
+}
+
+.result-btn:active { transform: scale(0.97); }
+
 @media (max-width: 420px) {
   body { padding: 0; }
   .phone-frame { border-radius: 0; max-width: 100%; min-height: 100vh; }
@@ -1434,7 +1757,7 @@ body {
         </div>
 
         <div class="test-list" id="testList">
-          <div class="test-card" onclick="showToast('MBTI 测评开始')">
+          <div class="test-card" onclick="startTest('mbti')">
             <div class="test-icon" style="background: linear-gradient(135deg, #FF6B8A, #FF8FA3);">💎</div>
             <div class="test-info">
               <span class="test-name">MBTI人格测试</span>
@@ -1448,27 +1771,27 @@ body {
             <div class="test-arrow">→</div>
           </div>
 
-          <div class="test-card" onclick="showToast('霍兰德测试开始')">
+          <div class="test-card" onclick="startTest('holland')">
             <div class="test-icon" style="background: linear-gradient(135deg, #667EEA, #764BA2);">🎯</div>
             <div class="test-info">
               <span class="test-name">霍兰德职业兴趣</span>
               <span class="test-desc">发现最适合你的职业方向</span>
               <div class="test-meta">
-                <span class="meta-item">60题</span>
+                <span class="meta-item">24题</span>
                 <span class="meta-divider">·</span>
-                <span class="meta-item">15分钟</span>
+                <span class="meta-item">8分钟</span>
               </div>
             </div>
             <div class="test-arrow">→</div>
           </div>
 
-          <div class="test-card" onclick="showToast('多元智能测试开始')">
+          <div class="test-card" onclick="startTest('multiple')">
             <div class="test-icon" style="background: linear-gradient(135deg, #11998E, #38EF7D);">✨</div>
             <div class="test-info">
               <span class="test-name">多元智能测试</span>
               <span class="test-desc">发现你的天赋与优势领域</span>
               <div class="test-meta">
-                <span class="meta-item">40题</span>
+                <span class="meta-item">32题</span>
                 <span class="meta-divider">·</span>
                 <span class="meta-item">10分钟</span>
               </div>
@@ -1476,7 +1799,7 @@ body {
             <div class="test-arrow">→</div>
           </div>
 
-          <div class="test-card" onclick="showToast('价值观测试开始')">
+          <div class="test-card" onclick="startTest('values')">
             <div class="test-icon" style="background: linear-gradient(135deg, #F093FB, #F5576C);">💖</div>
             <div class="test-info">
               <span class="test-name">价值观评估</span>
@@ -2032,6 +2355,46 @@ body {
         </div>
       </div>
 
+      <div class="page" id="page-testing">
+        <div class="test-page">
+          <div class="test-header">
+            <div class="test-title-bar">
+              <div class="test-back-btn" onclick="exitTest()">←</div>
+              <span class="test-title-text" id="testTitle">测评进行中</span>
+            </div>
+            <div class="test-progress-bar">
+              <div class="test-progress-fill" id="testProgressFill"></div>
+            </div>
+            <div class="test-progress-text" id="testProgressText">1/28</div>
+          </div>
+          <div class="test-content">
+            <div class="test-question-card" id="questionCard">
+              <div class="question-number" id="questionNumber">Q1</div>
+              <div class="question-text" id="questionText">题目内容</div>
+              <div class="question-options" id="questionOptions"></div>
+            </div>
+            <div class="test-nav">
+              <div class="test-nav-btn secondary disabled" id="prevBtn" onclick="prevQuestion()">上一题</div>
+              <div class="test-nav-btn primary" id="nextBtn" onclick="nextQuestion()">下一题</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="page-test-result">
+        <div class="test-result-page">
+          <div class="result-header">
+            <div class="result-title">测评结果</div>
+            <div class="result-subtitle" id="resultSubtitle">了解真实的自己</div>
+          </div>
+          <div class="result-card" id="resultCard"></div>
+          <div class="result-action">
+            <div class="result-btn secondary" onclick="exitTest()">返回首页</div>
+            <div class="result-btn primary" onclick="switchTab('plan')">查看规划</div>
+          </div>
+        </div>
+      </div>
+
       <div class="page" id="page-mine">
         <div class="profile-header">
           <div class="profile-bg"></div>
@@ -2282,7 +2645,204 @@ const state = {
     { name: '完成编程练习', time: '14:00 - 15:30', completed: true },
     { name: '阅读技术书籍', time: '20:00 - 21:00', completed: false },
     { name: '健身运动30分钟', time: '21:30 - 22:00', completed: false }
-  ]
+  ],
+  test: {
+    currentType: '',
+    currentQuestion: 0,
+    answers: {},
+    questions: []
+  }
+};
+
+const TEST_DATA = {
+  mbti: {
+    name: 'MBTI人格测试',
+    desc: '探索你的性格类型与特质',
+    questions: [
+      { q: '在聚会上，你通常是', options: ['主动与人交流，享受社交', '观察周围，选择性交流'], type: 'EI', weight: [1, 0] },
+      { q: '你更喜欢哪种工作方式', options: ['独立完成，专注深入', '团队协作，集思广益'], type: 'IE', weight: [0, 1] },
+      { q: '做决定时，你更倾向于', options: ['凭感觉和直觉', '凭逻辑和分析'], type: 'TF', weight: [0, 1] },
+      { q: '你喜欢的活动更偏向于', options: ['户外活动，与人互动', '室内活动，独自思考'], type: 'EI', weight: [1, 0] },
+      { q: '面对新信息，你通常', options: ['先理解整体概念', '先关注细节事实'], type: 'SN', weight: [0, 1] },
+      { q: '你更在意的是', options: ['达成目标的过程', '最终的结果'], type: 'JP', weight: [0, 1] },
+      { q: '遇到问题时，你会', options: ['快速做出决定', '权衡各种可能性'], type: 'JP', weight: [1, 0] },
+      { q: '你更擅长的是', options: ['提出创新想法', '落实具体方案'], type: 'SN', weight: [0, 1] },
+      { q: '在团队中，你通常是', options: ['引导讨论的人', '倾听和支持的人'], type: 'EI', weight: [1, 0] },
+      { q: '你更喜欢的学习方式', options: ['理论学习', '实践操作'], type: 'SN', weight: [1, 0] },
+      { q: '你是一个', options: ['喜欢计划的人', '随遇而安的人'], type: 'JP', weight: [1, 0] },
+      { q: '与人交往时，你更看重', options: ['真诚和感受', '诚实和公正'], type: 'TF', weight: [0, 1] },
+      { q: '你更容易记住', options: ['人的面孔', '人的名字'], type: 'SN', weight: [0, 1] },
+      { q: '你更喜欢的环境是', options: ['热闹有活力', '安静平和'], type: 'EI', weight: [1, 0] },
+      { q: '做事情时，你更注重', options: ['灵活性', '条理性'], type: 'JP', weight: [0, 1] },
+      { q: '你更相信', options: ['你的直觉', '你的经验'], type: 'SN', weight: [0, 1] },
+      { q: '你更喜欢哪种决策方式', options: ['快速果断', '深思熟虑'], type: 'JP', weight: [1, 0] },
+      { q: '在社交场合，你通常', options: ['精力充沛', '感到疲惫'], type: 'EI', weight: [1, 0] },
+      { q: '你更擅长', options: ['分析问题', '理解他人'], type: 'TF', weight: [1, 0] },
+      { q: '你更关注', options: ['未来的可能性', '现在的现实'], type: 'SN', weight: [0, 1] },
+      { q: '你更喜欢的沟通方式', options: ['直接表达', '委婉含蓄'], type: 'TF', weight: [1, 0] },
+      { q: '你是一个', options: ['容易激动的人', '情绪稳定的人'], type: 'TF', weight: [0, 1] },
+      { q: '面对变化，你通常', options: ['感到兴奋', '感到不安'], type: 'JP', weight: [0, 1] },
+      { q: '你更擅长的是', options: ['抽象思考', '具体操作'], type: 'SN', weight: [0, 1] },
+      { q: '在会议中，你通常', options: ['积极发言', '认真倾听'], type: 'EI', weight: [1, 0] },
+      { q: '你更看重', options: ['个人成就', '团队和谐'], type: 'TF', weight: [1, 0] },
+      { q: '你更喜欢的生活方式', options: ['丰富多彩', '简单平静'], type: 'EI', weight: [1, 0] },
+      { q: '你更相信', options: ['理性分析', '感性判断'], type: 'TF', weight: [1, 0] }
+    ]
+  },
+  holland: {
+    name: '霍兰德职业兴趣',
+    desc: '发现最适合你的职业方向',
+    questions: [
+      { q: '喜欢动手制作物品', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'R', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢与人打交道', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'S', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢解决数学问题', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'I', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢领导和管理他人', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'E', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢艺术创作', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'A', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢整理和组织', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'C', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢户外活动', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'R', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢帮助他人', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'S', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢科学实验', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'I', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢销售和谈判', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'E', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢绘画或音乐', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'A', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢数据处理', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'C', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢修理电器', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'R', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢教学工作', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'S', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢阅读科普书籍', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'I', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢组织活动', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'E', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢写作或设计', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'A', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢财务分析', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'C', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢机械工程', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'R', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢心理咨询', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'S', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢逻辑推理', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'I', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢创业项目', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'E', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢摄影或表演', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'A', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢文书处理', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'C', weight: [5, 4, 3, 2, 1] }
+    ]
+  },
+  multiple: {
+    name: '多元智能测试',
+    desc: '发现你的天赋与优势领域',
+    questions: [
+      { q: '喜欢阅读和写作', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'linguistic', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长数学计算', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'logical', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢音乐和唱歌', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'musical', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长体育运动', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'bodily', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢与人交往', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'interpersonal', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢独处思考', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'intrapersonal', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢观察自然', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'naturalist', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长空间想象', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'spatial', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长讲故事', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'linguistic', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢解决难题', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'logical', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长乐器演奏', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'musical', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢舞蹈或表演', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'bodily', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长团队协作', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'interpersonal', weight: [5, 4, 3, 2, 1] },
+      { q: '了解自己的优缺点', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'intrapersonal', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢动植物', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'naturalist', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长绘画或设计', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'spatial', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长语言表达', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'linguistic', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢数据分析', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'logical', weight: [5, 4, 3, 2, 1] },
+      { q: '对音乐敏感', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'musical', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长手工制作', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'bodily', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长沟通协调', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'interpersonal', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢自我反思', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'intrapersonal', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长辨认方向', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'spatial', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢探索自然规律', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'naturalist', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长写作', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'linguistic', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢逻辑推理', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'logical', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢唱歌', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'musical', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长运动', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'bodily', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长理解他人', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'interpersonal', weight: [5, 4, 3, 2, 1] },
+      { q: '有明确的人生目标', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'intrapersonal', weight: [5, 4, 3, 2, 1] },
+      { q: '喜欢户外活动', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'naturalist', weight: [5, 4, 3, 2, 1] },
+      { q: '擅长空间设计', options: ['非常符合', '比较符合', '不确定', '不太符合', '非常不符合'], type: 'spatial', weight: [5, 4, 3, 2, 1] }
+    ]
+  },
+  values: {
+    name: '价值观评估',
+    desc: '了解你真正看重的是什么',
+    questions: [
+      { q: '你更看重', options: ['稳定的生活', '充满挑战的生活'], type: 'security', weight: [1, 0] },
+      { q: '你更追求', options: ['物质财富', '精神满足'], type: 'wealth', weight: [1, 0] },
+      { q: '你更在意', options: ['个人成就', '家庭幸福'], type: 'achievement', weight: [1, 0] },
+      { q: '你更看重', options: ['自由独立', '团队合作'], type: 'independence', weight: [1, 0] },
+      { q: '你更追求', options: ['创新变革', '传统稳定'], type: 'innovation', weight: [1, 0] },
+      { q: '你更在意', options: ['社会地位', '内心平静'], type: 'status', weight: [1, 0] },
+      { q: '你更看重', options: ['工作效率', '人际关系'], type: 'efficiency', weight: [1, 0] },
+      { q: '你更追求', options: ['冒险刺激', '安全稳妥'], type: 'adventure', weight: [1, 0] },
+      { q: '你更在意', options: ['公平正义', '和谐融洽'], type: 'justice', weight: [1, 0] },
+      { q: '你更看重', options: ['知识学习', '实践经验'], type: 'learning', weight: [1, 0] },
+      { q: '你更追求', options: ['名声威望', '真实自我'], type: 'reputation', weight: [1, 0] },
+      { q: '你更在意', options: ['规则秩序', '灵活变通'], type: 'order', weight: [1, 0] },
+      { q: '你更看重', options: ['个人利益', '公共利益'], type: 'selfless', weight: [0, 1] },
+      { q: '你更追求', options: ['短期利益', '长期价值'], type: 'longterm', weight: [0, 1] },
+      { q: '你更在意', options: ['外表形象', '内在品质'], type: 'appearance', weight: [1, 0] },
+      { q: '你更看重', options: ['竞争取胜', '合作共赢'], type: 'competition', weight: [1, 0] },
+      { q: '你更追求', options: ['舒适安逸', '奋斗成长'], type: 'comfort', weight: [1, 0] },
+      { q: '你更在意', options: ['他人认可', '自我认同'], type: 'recognition', weight: [1, 0] },
+      { q: '你更看重', options: ['理性思考', '感性体验'], type: 'rational', weight: [1, 0] },
+      { q: '你更追求', options: ['稳定收入', '职业发展'], type: 'growth', weight: [0, 1] },
+      { q: '你更在意', options: ['权力地位', '平等尊重'], type: 'power', weight: [1, 0] },
+      { q: '你更看重', options: ['专业能力', '综合素养'], type: 'professional', weight: [1, 0] },
+      { q: '你更追求', options: ['享受当下', '规划未来'], type: 'future', weight: [0, 1] },
+      { q: '你更在意', options: ['实用功能', '审美设计'], type: 'practical', weight: [1, 0] },
+      { q: '你更看重', options: ['快速决策', '深思熟虑'], type: 'speed', weight: [1, 0] },
+      { q: '你更追求', options: ['个人自由', '社会责任'], type: 'responsibility', weight: [0, 1] },
+      { q: '你更在意', options: ['稳定不变', '持续进步'], type: 'progress', weight: [0, 1] },
+      { q: '你更看重', options: ['专业深度', '知识广度'], type: 'depth', weight: [1, 0] },
+      { q: '你更追求', options: ['物质享受', '精神追求'], type: 'spirit', weight: [0, 1] },
+      { q: '你更在意', options: ['结果导向', '过程体验'], type: 'outcome', weight: [1, 0] }
+    ]
+  }
+};
+
+const MBTI_RESULTS = {
+  'INTJ': { name: '建筑师', desc: '富有想象力和战略性的思想家，擅长长远规划和复杂问题解决。', traits: ['独立思考', '战略眼光', '追求完美', '逻辑严密'] },
+  'INTP': { name: '逻辑学家', desc: '好奇的思想家，喜欢探索知识和理解事物的本质。', traits: ['好奇心强', '逻辑分析', '创新思维', '独立研究'] },
+  'ENTJ': { name: '指挥官', desc: '果敢的领导者，善于组织和决策，追求高效和成果。', traits: ['领导力强', '果断决策', '目标导向', '战略规划'] },
+  'ENTP': { name: '辩论家', desc: '聪明好奇的革新者，喜欢挑战和辩论，富有创造力。', traits: ['思维敏捷', '善于辩论', '创新突破', '勇于挑战'] },
+  'INFJ': { name: '提倡者', desc: '富有洞察力和创造力的理想主义者，追求意义和价值。', traits: ['理想主义', '富有洞察', '善于倾听', '追求意义'] },
+  'INFP': { name: '调停者', desc: '温和的理想主义者，重视价值观和个人成长。', traits: ['同理心强', '价值观明确', '富有创造力', '追求和谐'] },
+  'ENFJ': { name: '主人公', desc: '热情的领导者，善于激励他人，追求共同目标。', traits: ['热情洋溢', '善于激励', '团队精神', '富有魅力'] },
+  'ENFP': { name: '竞选者', desc: '充满激情的探索者，喜欢与人交往，富有想象力。', traits: ['热情活泼', '富有创意', '善于社交', '好奇心强'] },
+  'ISTJ': { name: '物流师', desc: '可靠的组织者，注重细节和秩序，值得信赖。', traits: ['可靠踏实', '注重细节', '责任感强', '秩序井然'] },
+  'ISFJ': { name: '守卫者', desc: '温暖的守护者，关心他人，乐于助人。', traits: ['乐于助人', '细心体贴', '责任感强', '富有爱心'] },
+  'ESTJ': { name: '总经理', desc: '务实的管理者，善于组织和执行，追求效率。', traits: ['务实高效', '组织能力强', '果断决策', '注重秩序'] },
+  'ESFJ': { name: '执政官', desc: '热情的社交者，关心他人，善于协调。', traits: ['热情好客', '善于协调', '乐于助人', '注重和谐'] },
+  'ISTP': { name: '鉴赏家', desc: '冷静的实践者，善于动手和解决实际问题。', traits: ['动手能力强', '冷静务实', '善于分析', '适应性强'] },
+  'ISFP': { name: '探险家', desc: '自由的艺术家，享受当下，善于感受和创造。', traits: ['艺术天赋', '享受当下', '自由随性', '善于感受'] },
+  'ESTP': { name: '企业家', desc: '大胆的行动派，善于冒险和抓住机会。', traits: ['行动力强', '善于冒险', '机智灵活', '务实高效'] },
+  'ESFP': { name: '表演者', desc: '热情的表演者，喜欢与人交往，享受生活。', traits: ['热情活泼', '善于表演', '享受生活', '社交达人'] }
+};
+
+const HOLLAND_RESULTS = {
+  'R': { name: '现实型', desc: '喜欢动手操作，擅长技术和机械工作。', careers: ['工程师', '机械师', '建筑师', '运动员'] },
+  'I': { name: '研究型', desc: '喜欢思考分析，擅长科学和研究工作。', careers: ['科学家', '研究员', '分析师', '医生'] },
+  'A': { name: '艺术型', desc: '喜欢创造表达，擅长艺术和设计工作。', careers: ['设计师', '作家', '艺术家', '音乐家'] },
+  'S': { name: '社会型', desc: '喜欢帮助他人，擅长教育和服务工作。', careers: ['教师', '咨询师', '护士', '社工'] },
+  'E': { name: '企业型', desc: '喜欢领导管理，擅长销售和管理工作。', careers: ['经理', '销售', '创业者', '政治家'] },
+  'C': { name: '常规型', desc: '喜欢秩序条理，擅长文书和财务工作。', careers: ['会计', '秘书', '银行职员', '行政人员'] }
+};
+
+const MULTIPLE_RESULTS = {
+  linguistic: { name: '语言智能', desc: '擅长语言表达和文字处理' },
+  logical: { name: '逻辑-数学智能', desc: '擅长逻辑推理和数学运算' },
+  musical: { name: '音乐智能', desc: '擅长音乐感知和创作' },
+  bodily: { name: '身体-动觉智能', desc: '擅长身体运动和手工操作' },
+  interpersonal: { name: '人际智能', desc: '擅长理解他人和社交互动' },
+  intrapersonal: { name: '自我认知智能', desc: '擅长自我反思和内心探索' },
+  naturalist: { name: '自然观察智能', desc: '擅长观察自然和分类识别' },
+  spatial: { name: '空间智能', desc: '擅长空间想象和视觉设计' }
+};
+
+const VALUES_RESULTS = {
+  security: '安全感', wealth: '财富', achievement: '成就', independence: '独立',
+  innovation: '创新', status: '地位', efficiency: '效率', adventure: '冒险',
+  justice: '正义', learning: '学习', reputation: '名声', order: '秩序',
+  selfless: '奉献', longterm: '长远价值', appearance: '外表', competition: '竞争',
+  comfort: '舒适', recognition: '认可', rational: '理性', growth: '成长',
+  power: '权力', professional: '专业', future: '未来', practical: '实用',
+  speed: '速度', responsibility: '责任', progress: '进步', depth: '深度',
+  spirit: '精神', outcome: '结果'
 };
 
 function init() {
@@ -2612,6 +3172,243 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
     }
   });
 });
+
+function startTest(type) {
+  state.test.currentType = type;
+  state.test.currentQuestion = 0;
+  state.test.answers = {};
+  state.test.questions = TEST_DATA[type].questions;
+  
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-testing').classList.add('active');
+  
+  document.getElementById('testTitle').textContent = TEST_DATA[type].name;
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = state.test.questions[state.test.currentQuestion];
+  const total = state.test.questions.length;
+  
+  document.getElementById('questionNumber').textContent = `Q${state.test.currentQuestion + 1}`;
+  document.getElementById('questionText').textContent = q.q;
+  
+  const optionsHtml = q.options.map((opt, idx) => {
+    const isSelected = state.test.answers[state.test.currentQuestion] === idx;
+    return `<div class="option-card ${isSelected ? 'selected' : ''}" onclick="selectOption(${idx})">
+      <div class="option-icon">${String.fromCharCode(65 + idx)}</div>
+      <div class="option-text">${opt}</div>
+    </div>`;
+  }).join('');
+  
+  document.getElementById('questionOptions').innerHTML = optionsHtml;
+  
+  const progress = ((state.test.currentQuestion + 1) / total) * 100;
+  document.getElementById('testProgressFill').style.width = progress + '%';
+  document.getElementById('testProgressText').textContent = `${state.test.currentQuestion + 1}/${total}`;
+  
+  document.getElementById('prevBtn').classList.toggle('disabled', state.test.currentQuestion === 0);
+  document.getElementById('nextBtn').textContent = state.test.currentQuestion === total - 1 ? '查看结果' : '下一题';
+}
+
+function selectOption(index) {
+  state.test.answers[state.test.currentQuestion] = index;
+  renderQuestion();
+}
+
+function prevQuestion() {
+  if (state.test.currentQuestion > 0) {
+    state.test.currentQuestion--;
+    renderQuestion();
+  }
+}
+
+function nextQuestion() {
+  if (state.test.answers[state.test.currentQuestion] === undefined) {
+    showToast('请先选择一个答案');
+    return;
+  }
+  
+  if (state.test.currentQuestion === state.test.questions.length - 1) {
+    calculateResult();
+  } else {
+    state.test.currentQuestion++;
+    renderQuestion();
+  }
+}
+
+function calculateResult() {
+  const type = state.test.currentType;
+  
+  if (type === 'mbti') {
+    calculateMBTI();
+  } else if (type === 'holland') {
+    calculateHolland();
+  } else if (type === 'multiple') {
+    calculateMultiple();
+  } else if (type === 'values') {
+    calculateValues();
+  }
+}
+
+function calculateMBTI() {
+  let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+  
+  state.test.questions.forEach((q, idx) => {
+    const ans = state.test.answers[idx];
+    const type = q.type;
+    const weight = q.weight[ans];
+    
+    if (type === 'EI') {
+      scores.E += weight;
+      scores.I += (1 - weight);
+    } else if (type === 'IE') {
+      scores.I += weight;
+      scores.E += (1 - weight);
+    } else if (type === 'SN') {
+      scores.S += weight;
+      scores.N += (1 - weight);
+    } else if (type === 'NS') {
+      scores.N += weight;
+      scores.S += (1 - weight);
+    } else if (type === 'TF') {
+      scores.T += weight;
+      scores.F += (1 - weight);
+    } else if (type === 'FT') {
+      scores.F += weight;
+      scores.T += (1 - weight);
+    } else if (type === 'JP') {
+      scores.J += weight;
+      scores.P += (1 - weight);
+    } else if (type === 'PJ') {
+      scores.P += weight;
+      scores.J += (1 - weight);
+    }
+  });
+  
+  const mbti = (scores.E > scores.I ? 'E' : 'I') +
+               (scores.S > scores.N ? 'S' : 'N') +
+               (scores.T > scores.F ? 'T' : 'F') +
+               (scores.J > scores.P ? 'J' : 'P');
+  
+  const result = MBTI_RESULTS[mbti] || MBTI_RESULTS['INTJ'];
+  
+  showResult('MBTI', mbti, result.name, result.desc, result.traits, scores);
+}
+
+function calculateHolland() {
+  let scores = { R: 0, I: 0, A: 0, S: 0, E: 0, C: 0 };
+  
+  state.test.questions.forEach((q, idx) => {
+    const ans = state.test.answers[idx];
+    scores[q.type] += q.weight[ans];
+  });
+  
+  const sorted = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+  const code = sorted.slice(0, 3).join('');
+  
+  const topTypes = sorted.slice(0, 2).map(t => HOLLAND_RESULTS[t]);
+  const traits = topTypes.map(t => t.name).concat(topTypes[0].careers.slice(0, 2));
+  
+  showResult('霍兰德', code + '型', topTypes[0].name, topTypes[0].desc, traits, scores);
+}
+
+function calculateMultiple() {
+  let scores = { linguistic: 0, logical: 0, musical: 0, bodily: 0, interpersonal: 0, intrapersonal: 0, naturalist: 0, spatial: 0 };
+  
+  state.test.questions.forEach((q, idx) => {
+    const ans = state.test.answers[idx];
+    scores[q.type] += q.weight[ans];
+  });
+  
+  const sorted = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+  const top3 = sorted.slice(0, 3).map(t => MULTIPLE_RESULTS[t]);
+  
+  const types = top3.map(t => t.name);
+  const desc = top3.map(t => t.desc).join('；');
+  
+  showResult('多元智能', types.join('·'), types[0], desc, types, scores);
+}
+
+function calculateValues() {
+  let scores = {};
+  Object.keys(VALUES_RESULTS).forEach(k => scores[k] = 0);
+  
+  state.test.questions.forEach((q, idx) => {
+    const ans = state.test.answers[idx];
+    scores[q.type] += q.weight[ans];
+  });
+  
+  const sorted = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+  const top5 = sorted.slice(0, 5).map(k => VALUES_RESULTS[k]);
+  
+  showResult('价值观', top5.join('·'), top5[0], '你的核心价值观排序如上所示，这些价值将影响你的职业选择和生活决策。', top5, scores);
+}
+
+function showResult(testName, typeCode, typeName, desc, traits, scores) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-test-result').classList.add('active');
+  
+  document.getElementById('resultSubtitle').textContent = TEST_DATA[state.test.currentType].desc;
+  
+  let chartHtml = '';
+  if (scores) {
+    const maxScore = Math.max(...Object.values(scores));
+    chartHtml = `<div class="result-section">
+      <div class="result-section-title">维度得分</div>
+      <div class="result-chart">`;
+    
+    if (state.test.currentType === 'mbti') {
+      const pairs = [['E', 'I'], ['S', 'N'], ['T', 'F'], ['J', 'P']];
+      pairs.forEach(([a, b]) => {
+        const total = scores[a] + scores[b];
+        chartHtml += `<div class="chart-row">
+          <div class="chart-label">${a}/${b}</div>
+          <div class="chart-bar">
+            <div class="chart-fill" style="width:${total > 0 ? (scores[a] / total * 100) : 0}%"></div>
+          </div>
+          <div class="chart-value">${scores[a]}/${scores[b]}</div>
+        </div>`;
+      });
+    } else {
+      Object.keys(scores).sort((a, b) => scores[b] - scores[a]).forEach(key => {
+        const label = state.test.currentType === 'holland' ? key : 
+                      state.test.currentType === 'multiple' ? MULTIPLE_RESULTS[key]?.name || key :
+                      VALUES_RESULTS[key] || key;
+        const percent = maxScore > 0 ? (scores[key] / maxScore * 100) : 0;
+        chartHtml += `<div class="chart-row">
+          <div class="chart-label">${label}</div>
+          <div class="chart-bar">
+            <div class="chart-fill" style="width:${percent}%"></div>
+          </div>
+          <div class="chart-value">${scores[key]}</div>
+        </div>`;
+      });
+    }
+    chartHtml += `</div></div>`;
+  }
+  
+  const traitsHtml = traits.map(t => `<span class="trait-tag">${t}</span>`).join('');
+  
+  document.getElementById('resultCard').innerHTML = `
+    <div class="result-type">
+      <div class="result-type-icon">${typeCode.charAt(0)}</div>
+      <div class="result-type-name">${typeCode}</div>
+      <div class="result-type-subtitle">${typeName}</div>
+    </div>
+    <div class="result-desc">${desc}</div>
+    <div class="result-section">
+      <div class="result-section-title">核心特质</div>
+      <div class="result-traits">${traitsHtml}</div>
+    </div>
+    ${chartHtml}
+  `;
+}
+
+function exitTest() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-test').classList.add('active');
+}
 
 init();
 </script>
